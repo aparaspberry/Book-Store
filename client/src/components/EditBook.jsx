@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
 
-
+// JavaScript to Update/Edit the Books Information
 const EditBook = () => {
     const [name, setName] = useState('')
     const [author, setAuthor] = useState('')
@@ -14,7 +14,7 @@ const EditBook = () => {
 
     useEffect(() => {
         axios.get('https://localhost:3001/book/book/'+id)
-            .then(res => {
+            .then(res => {        //response from database/server the name, author, book Image 
                 setName(res.data.name)
                 setAuthor(res.data.author)
                 setImageUrl(res.data.imageUrl)
@@ -27,13 +27,13 @@ const EditBook = () => {
         axios.put('https://localhost:3001/book/book/'+id, { name, author, imageUrl })
             .then(res => {
                 if (res.data.updated) {
-                    navigate('/books')
+                    navigate('/books') // if response from server is successfully updated then navigate to Books page
                 }
                 else {
-                    console.log(res)
+                    console.log(res)    // else respond with the status
                 }
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err)) //if any error, it will be returned to console
 
     }
 

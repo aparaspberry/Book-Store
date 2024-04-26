@@ -5,6 +5,10 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 const router = express.Router();
 
+// Authentication Routes for Login and authorisation of users and Admin
+
+// Here authentication takes place using tokens/cookies to authorise admin
+
 router.post('/login', async (req, res) => {
     try{
     const {username, password, role} = req.body;

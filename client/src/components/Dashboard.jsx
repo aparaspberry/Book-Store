@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import '../css/Dashboard.css'
 import axios from 'axios'
 
+
+// This code displays count of Students, Books, Admin
 const Dashboard = () => {
   const [students, setStudents] = useState(0)
   const [admin, setAdmin] = useState(0)

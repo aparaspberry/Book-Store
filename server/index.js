@@ -28,8 +28,8 @@ app.use(express.json())
 app.use(cors({
     origin: ['https://localhost:5173'],
     credentials: true,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',   //gpt  update for cors error in login.jsx
-    allowedHeaders: 'Content-Type,Authorization' //gpt update
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',   //  update for cors error in login.jsx
+    allowedHeaders: 'Content-Type,Authorization' // update
 }))
 app.use(cookieParser())
 dotenv.config()

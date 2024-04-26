@@ -2,6 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import axios from 'axios'
 
+// Delete request to delete a Book from database 
 const DeleteBook = () => {
     const navigate = useNavigate()
     const { id } = useParams()
@@ -9,10 +10,10 @@ const DeleteBook = () => {
       axios.delete('https://localhost:3001/book/book/'+id)
       .then(res => {
           if(res.data.deleted) {
-              navigate('/books'),
-              alert('Book Deleted')
+              navigate('/books'),  //if book is deleted then navigate to books page 
+              alert('Book Deleted')  // console message 
           }
-      }).catch(err => console.log(err))
+      }).catch(err => console.log(err))// else respond the error message to console
     }, [])
 }
 

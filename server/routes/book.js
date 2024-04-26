@@ -4,6 +4,9 @@ import { verifyAdmin } from './auth.js';
 
 const router = express.Router();
 
+
+// Routers for Create Read Update and Delete operations
+// Router to Add new Book
 router.post('/add', verifyAdmin, async (req, res) => {
     try {
         const { name, author, imageUrl } = req.body;
@@ -18,7 +21,7 @@ router.post('/add', verifyAdmin, async (req, res) => {
         return res.json({ message: "Error in adding book" })
     }
 })
-
+// Router to Read new Book
 router.get('/books', async (req, res) => {
     try {
         const books = await Book.find()
@@ -27,7 +30,7 @@ router.get('/books', async (req, res) => {
         return res.json(err)
     }
 })
-
+// Router to find book by ID
 router.get('/book/:id', async (req, res) => {
     try {
         const id = req.params.id;
@@ -37,6 +40,7 @@ router.get('/book/:id', async (req, res) => {
         return res.json(err)
     }
 })
+// Router to update Book
 router.put('/book/:id', async (req, res) => {
     try {
         const id = req.params.id;
@@ -46,7 +50,7 @@ router.put('/book/:id', async (req, res) => {
         return res.json(err)
     }
 })
-
+// Router to Add new Book
 router.delete('/book/:id', async (req, res) => {
     try {
         const id = req.params.id;

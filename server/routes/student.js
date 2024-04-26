@@ -5,6 +5,7 @@ import { verifyAdmin } from './auth.js';
 
 const router = express.Router();
 
+//Router for student to register again it is verified with tokens
 router.post('/register', verifyAdmin, async (req, res) => {
     try {
         const {username, password, roll, grade} = req.body;

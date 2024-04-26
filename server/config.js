@@ -1,1 +1,1 @@
-export const PORT = 3001;
+export const PORT = 3001;  //port on which the backend is listening to
