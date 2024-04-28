@@ -12,10 +12,10 @@ const AddBook = () => {
   
     const handleSubmit = (e) => {
       e.preventDefault()
-      axios.post('https://localhost:3001/book/add', {name, author, imageUrl})
+      axios.post('https://localhost:3001/book/add', {name, author, imageUrl})  //axios POST method to add books to database
       .then(res => { 
         if(res.data.added) {
-          navigate('/books')
+          navigate('/books')       
         } 
         else {
           console.log(res)
@@ -26,7 +26,7 @@ const AddBook = () => {
   }
 
 //const AddStudent = () => {
-    return (
+    return (             //this is the form structure of the new Book to be added with respective fields
         <div className="student-form-container">
             <form className="student-form" onSubmit={handleSubmit}>
                 <h2>Add Book</h2>
