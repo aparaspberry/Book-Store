@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../css/Navbar.css'
 
-
+// NavBar contains the links which helps in navigating the pages when we click on the buttons to perform actions like save, add, delete and return to Dashboard.
 const Navbar = ({ role }) => {
   return (
     <nav className='navbar'>
