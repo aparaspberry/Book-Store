@@ -13,10 +13,10 @@ const AddStudent = () => {
   
 const handleSubmit = (e) => {
     e.preventDefault()
-    const token = localStorage.getItem('token'); //copilot
-    axios.post('https://localhost:3001/student/register', {roll, username, password, grade}, {//
+    const token = localStorage.getItem('token'); 
+    axios.post('https://localhost:3001/student/register', {roll, username, password, grade}, {// POST method to Register a new student 
         headers: {
-            'Authorization': `Bearer ${token}` // Include the token in the Authorization header
+            'Authorization': `Bearer ${token}` // Includes the token in the Authorization header
         }
     })
     .then(res => { 
