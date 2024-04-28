@@ -6,7 +6,7 @@ import '../css/Book.css'
 const Books = ({role}) => {
   const [books, setBooks] = useState([])
   useEffect(() => {
-    axios.get('https://localhost:3001/book/books')
+    axios.get('https://localhost:3001/book/books')  // GET method to return the Books from database.
       .then(res => {
         setBooks(res.data)
         console.log(res.data)
