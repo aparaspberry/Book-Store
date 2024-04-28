@@ -9,7 +9,7 @@ const Dashboard = () => {
   const [admin, setAdmin] = useState(0)
   const [books, setBooks] = useState(0)
   useEffect(() => {
-    axios.get('https://localhost:3001/dashboard')
+    axios.get('https://localhost:3001/dashboard')  //Axios GET method to get data of the Dashboard from database Student Admin and books
     .then(res => {
       if(res.data.ok) {
         setStudents(res.data.student)
