@@ -5,7 +5,7 @@ import axios from 'axios'
 const Logout = ({setRole}) => {
     const navigate = useNavigate()
   useEffect(() => {
-    axios.get('https://localhost:3001/auth/logout')
+    axios.get('https://localhost:3001/auth/logout')   //Axios GET method loggs out the user and returns to the Dashboard/Home page
     .then(res => {
         if(res.data.logout) {
             setRole('')
