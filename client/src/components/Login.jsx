@@ -13,7 +13,7 @@ const Login = ({ setRoleVar }) => {
 
   axios.defaults.withCredentials = true;
   const handleSubmit = () => {
-    axios.post('https://localhost:3001/auth/login', { username, password, role })
+    axios.post('https://localhost:3001/auth/login', { username, password, role })  //Axios POST method send API request to database to write authentication of Student and admin Roles
       .then(res => {
         if (res.data.login && res.data.role === 'admin') {
           setRoleVar('admin')
