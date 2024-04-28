@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom'
+eimport { useNavigate, useParams } from 'react-router-dom'
 import React, { useEffect } from 'react'
 import axios from 'axios'
 
@@ -7,7 +7,7 @@ const DeleteBook = () => {
     const navigate = useNavigate()
     const { id } = useParams()
     useEffect(() => {
-      axios.delete('https://localhost:3001/book/book/'+id)
+      axios.delete('https://localhost:3001/book/book/'+id) // Axios delete method to delete the book by searching for the ID from the database.
       .then(res => {
           if(res.data.deleted) {
               navigate('/books'),  //if book is deleted then navigate to books page 
